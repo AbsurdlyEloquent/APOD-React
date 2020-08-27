@@ -4,6 +4,7 @@ import Nav from './Nav.js'
 import SearchBar from './SearchBar.js'
 import Item from './Item.js'
 import LoadMore from './LoadMore.js'
+import Modal from './Modal.js'
 
 class App extends Component {
   constructor(props) {
@@ -23,13 +24,14 @@ class App extends Component {
   render() {
     return (
       <div className="body">
+      <Modal display={this.modalDisplay}/>
         <header className="header">
-          <Nav />
+          <Nav today={this.today} scrollTop={this.scrollTop}/>
             <section className="section">
               <h1>Amazing Spectacular Astronomy Photos</h1>
               <h4>Now in React</h4>
+              <SearchBar />
             </section>
-          <SearchBar />
         </header>
         <main>
 
@@ -37,6 +39,13 @@ class App extends Component {
       </div>
     )
   }
+  today() {
+    modalDisplay = true
+  }
+  scrollTop() {
+    console.log('clicked2!')
+  }
+  modalDisplay = false
 }
 
 export default App;
