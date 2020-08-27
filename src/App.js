@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <header>
-      <h1>Amazing Spectacular Astronomy Photos!</h1>
-      <p>Now in React</p>
-    </header>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      data: []
+    }
+  }
+  componentDidMount() {
+    fethc
+  }
 }
 
 export default App;
