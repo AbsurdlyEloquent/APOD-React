@@ -11,9 +11,13 @@ class App extends Component {
     super(props)
 
     this.state = {
-      data: []
+      data: [],
+      modalProps: {},
+      modalDisplay: true
     }
   }
+
+  //vari's to pass from child to child
 
   componentDidMount() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&count=20`)
@@ -24,14 +28,14 @@ class App extends Component {
   render() {
     return (
       <div className="body">
-      <Modal display={this.modalDisplay}/>
+      <Modal display={this.state.modalDisplay} modalProps={this.state.modalProps}/>
         <header className="header">
           <Nav today={this.today} scrollTop={this.scrollTop}/>
             <section className="section">
               <h1>Amazing Spectacular Astronomy Photos</h1>
               <h4>Now in React</h4>
-              <SearchBar />
             </section>
+            <SearchBar />
         </header>
         <main>
 
@@ -39,13 +43,17 @@ class App extends Component {
       </div>
     )
   }
-  today() {
-    modalDisplay = true
+  today = () => {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`)
+      .then(res=>res.json())
+      .then(res=>{
+        this.setState({modalProps: res, modalDisplay: true})
+        console.log(this.state.modalProps)
+      });
   }
   scrollTop() {
     console.log('clicked2!')
   }
-  modalDisplay = false
 }
 
 export default App;
