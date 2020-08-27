@@ -23,10 +23,12 @@ class App extends Component {
   render() {
     return (
       <div className="body">
-        <header>
+        <header className="header">
           <Nav />
-          <h1>Amazing Spectacular Astronomy Photos</h1>
-          <h4>Now in React</h4>
+            <section className="section">
+              <h1>Amazing Spectacular Astronomy Photos</h1>
+              <h4>Now in React</h4>
+            </section>
           <SearchBar />
         </header>
         <main>
