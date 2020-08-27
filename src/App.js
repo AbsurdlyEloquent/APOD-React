@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import Nav from './Nav.js'
+import SearchBar from './SearchBar.js'
+import Item from './Item.js'
+import LoadMore from './LoadMore.js'
 
 class App extends Component {
   constructor(props) {
@@ -22,16 +26,11 @@ class App extends Component {
         <header>
           <Nav />
           <h1>Amazing Spectacular Astronomy Photos</h1>
-          <h5>Now in React</h5>
+          <h4>Now in React</h4>
           <SearchBar />
         </header>
         <main>
-          {this.state.data.map(item => {
-            return (
-              <Item key={item.date} title={item.title} explan={item.explanation} url={item.url} hdurl={item.hdurl}/>
-            )
-          })}
-          <LoadMore />
+
         </main>
       </div>
     )
