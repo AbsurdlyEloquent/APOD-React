@@ -31,6 +31,7 @@ class App extends Component {
               <Item key={item.date} title={item.title} explan={item.explanation} url={item.url} hdurl={item.hdurl}/>
             )
           })}
+          <LoadMore />
         </main>
       </div>
     )
