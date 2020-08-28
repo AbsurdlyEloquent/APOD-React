@@ -5,10 +5,13 @@
   justify-content: space-between;
   align-items: center;
   background-color: black;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid;
   z-index: 2;
   text-align: center;
   color: white;
+  /* I cannot figure out why I have to add this
+  whithout it, the header pushes down 100px*/
+  top: 0;
 }
 .main {
   display: grid;

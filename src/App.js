@@ -38,9 +38,9 @@ class App extends Component {
         </header>
         <main className="main">
         {/* js */}
-          {this.state.data.map(item=>{
+          {this.state.data.map((item,index)=>{
             return (
-              <Item className="box" key={item.date} src={item.url} />
+              this.makeSections(item,index)
             )
           })}
         {/* js */}
@@ -58,6 +58,11 @@ class App extends Component {
   }
   scrollTop() {
     console.log('clicked2!')
+  }
+  makeSections(item, i) {
+    return setTimeout(()=>{
+      return (<Item className="box" key={item.date} src={item.url} />)
+    },250*i)
   }
 }
 
