@@ -50,13 +50,17 @@ class App extends Component {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=2020-08-27`)
       .then(res=>res.json())
       .then(res=>{
-        this.setState({modalProps: res, hidden: ""})
+        this.setState({modalProps: res, modalHidden: ""})
         console.log(this.state.modalProps)
       });
   }
-  setModal(e) {
+  setModal = (e) => {
     let i = e.target.getAttribute("index")
     console.log(i)
+    this.setState({
+      modalProps: this.state.data[i],
+      modalHidden: ""
+    })
   }
   hideModal = () => {
     this.setState({

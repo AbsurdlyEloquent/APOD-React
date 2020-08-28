@@ -29,6 +29,9 @@
   height: auto;
   border-radius: 5%;
 }
+.x {
+  position: absolute;
+}
 @keyframes slideDown {
   from {top: -100px;}
   to {}
