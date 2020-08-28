@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/apod-react/precache-manifest.8fcf26f93288901ed1d5b16b91a2b05a.js"
+  "/apod-react/precache-manifest.ddf85c2063306ef370fd67d579029008.js"
 );
 
 self.addEventListener('message', (event) => {
