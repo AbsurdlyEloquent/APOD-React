@@ -11,7 +11,7 @@ class Item extends Component {
       hidden: "hidden"
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     let that = this
     setTimeout(()=>{
       that.show()
@@ -21,7 +21,6 @@ class Item extends Component {
     this.setState({hidden: ""})
   }
   render = () => {
-    console.log(this.state.index)
     return (
       <div id={this.state.hidden} style={{background: `url('${this.state.src}')`}} className='box'></div>
     )

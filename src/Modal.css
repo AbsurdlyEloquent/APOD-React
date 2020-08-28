@@ -1,0 +1,30 @@
+.modalRoot {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  animation: fadeIn ease 1s;
+  background-color: rgba(0,0,0,.4);
+  z-index: 3;
+  overflow-y: scroll;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: #8850A0;
+  border: 4px solid #1b2735;
+  padding: 0 3%;
+  max-width: 40%;
+  top: 0;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 5%;
+  animation: slideDown ease 1s;
+  color: white;
+}
+@keyframes slideDown {
+  from {top: -100px;}
+  to {}
+}

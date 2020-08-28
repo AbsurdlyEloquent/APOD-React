@@ -38,7 +38,7 @@ class App extends Component {
         <main className="main">
         {/* js */}
           {this.state.data.map((item,i)=>{
-            return <Item className="box" key={i} src={item.url} index={i} />
+            return <Item onClick={(e)=>{this.setModal(this, e)}} className="box" key={i} src={item.url} index={i} />
           })}
         {/* js */}
         </main>
@@ -49,12 +49,16 @@ class App extends Component {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=2020-08-27`)
       .then(res=>res.json())
       .then(res=>{
-        this.setState({modalProps: res, modalDisplay: true})
+        this.setState({modalProps: res, modalDisplay: ""})
         console.log(this.state.modalProps)
       });
   }
   scrollTop() {
     console.log('clicked2!')
+  }
+  setModal(e) {
+    let key = e.index
+    console.log(key)
   }
 }
 
