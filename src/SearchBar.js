@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchBar.css'
 
 function SearchBar(props) {
   //for setting today's date as the max date
@@ -17,7 +18,7 @@ function SearchBar(props) {
   return (
     <form onSubmit={e=>props.handler(e)} class="form">
       <input type='date' min='1995-06-16' max={today}/>
-      <input type='submit' value='Submit' />
+      <input class="submit" type='submit' value='Submit' />
     </form>
   )
 }
