@@ -37,6 +37,7 @@
   right: 0;
   font-size: 35px;
   margin: 20px;
+  cursor: pointer;
 }
 @keyframes slideDown {
   from {top: -100px;}

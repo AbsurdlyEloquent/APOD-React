@@ -32,7 +32,7 @@ class App extends Component {
           <Nav today={this.today} scrollTop={this.scrollTop}/>
           <section className="section">
             <h1>Amazing Spectacular Astronomy Photos</h1>
-            <h4>Now in React</h4>
+            <h4><i>Now in React</i></h4>
           </section>
           <SearchBar handler={this.setModal}/>
         </header>
