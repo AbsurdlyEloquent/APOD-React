@@ -10,7 +10,7 @@
   text-align: center;
   color: white;
   /* I cannot figure out why I have to add this
-  whithout it, the header pushes down 100px*/
+  without it, the header pushes down 100px*/
   top: 0;
 }
 .header h1 {

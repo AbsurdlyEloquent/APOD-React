@@ -11,7 +11,6 @@ class App extends Component {
 
     this.state = {
       data: [],
-      modalKey: null,
       modalProps: {},
       modalHidden: "hidden"
     }
@@ -24,16 +23,18 @@ class App extends Component {
   }
 
   render = () => {
-    console.log(this.state.modalHidden)
     return (
       <div className="body">
-      <Modal key={this.state.modalKey} id={this.state.modalHidden} modalProps={this.state.modalProps} hide={this.hideModal}/>
+      // pass data about the image and hiding prop to the Modal
+      <Modal id={this.state.modalHidden} modalProps={this.state.modalProps} hide={this.hideModal}/>
         <header className="header">
+        {/*pass two methods to the Nav*/}
           <Nav today={this.today} scrollTop={this.scrollTop}/>
           <section className="section">
             <h1>Amazing Spectacular Astronomy Photos</h1>
             <h4><i>Now in React</i></h4>
           </section>
+          {/* pass event handler */}
           <SearchBar handler={this.setModal}/>
         </header>
         <main className="main">
@@ -51,26 +52,23 @@ class App extends Component {
       .then(res=>res.json())
       .then(res=>{
         this.setState({modalProps: res, modalHidden: ""})
-        console.log(this.state.modalProps)
       });
   }
   setModal = (e) => {
-    console.log(e.target.tagName)
     e.preventDefault()
+    // if the event is coming from an box, get the data from that box
     if(e.target.tagName === 'DIV') {
       let i = e.target.getAttribute("index")
-      console.log(i)
       this.setState({
         modalProps: this.state.data[i],
         modalHidden: ""
       })
+      //if the event is coming from the form, get new data from the date in the box
     } else if (e.target.tagName === 'FORM') {
-      console.log(e.target.children[0].value)
       fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=${e.target.children[0].value}`)
         .then(res=>res.json())
         .then(res=>{
           this.setState({modalProps: res, modalHidden:""})
-          console.log(this.state.modalProps);
         });
     }
   }

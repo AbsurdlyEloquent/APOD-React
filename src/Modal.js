@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import './Modal.css'
 
 class Modal extends Component {
-  constructor(props) {
-    super(props)
-
-    this.props = props
-    console.log(props.id)
-  }
-
+  //this is easier without states
   render() {
     return (
       <div id={this.props.id} className="modalRoot" onClick={this.props.hide}>

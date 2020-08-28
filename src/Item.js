@@ -14,6 +14,8 @@ class Item extends Component {
   handler = (e) => {
     this.props.handler(e)
   }
+  //delays loading of divs, more visual than practical
+  //'this' in setTimeout refers to the window
   componentDidMount() {
     let that = this
     setTimeout(()=>{
