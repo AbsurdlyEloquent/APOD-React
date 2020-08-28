@@ -24,6 +24,9 @@
   animation: slideDown ease 1s;
   color: white;
 }
+#hidden {
+  display: none;
+}
 @keyframes slideDown {
   from {top: -100px;}
   to {}

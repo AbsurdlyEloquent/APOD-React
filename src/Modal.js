@@ -12,7 +12,7 @@ class Modal extends Component {
       explan: props.modalProps.explanation,
     }
   }
-  
+
   render() {
     return (
       <div id={this.hidden} className="modalRoot" style={this.style}>

@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       data: [],
       modalProps: {},
-      modalDisplay: true
+      modalDisplay: "hidden"
     }
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
 
     return (
       <div className="body">
-      <Modal display={this.state.modalDisplay} modalProps={this.state.modalProps}/>
+      <Modal hidden={this.state.modalDisplay} modalProps={this.state.modalProps}/>
         <header className="header">
           <Nav today={this.today} scrollTop={this.scrollTop}/>
             <section className="section">
