@@ -3,4 +3,9 @@
   list-style: none;
   justify-content: space-between;
   width: 100%;
+} .list li, .list a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }

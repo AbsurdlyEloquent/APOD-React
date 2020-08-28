@@ -15,7 +15,7 @@ function SearchBar(props) {
   today = yyyy+'-'+mm+'-'+dd;
 
   return (
-    <form onSubmit={e=>props.handler(e)}>
+    <form onSubmit={e=>props.handler(e)} class="form">
       <input type='date' min='1995-06-16' max={today}/>
       <input type='submit' value='Submit' />
     </form>
