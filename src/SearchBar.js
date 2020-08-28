@@ -18,7 +18,7 @@ function SearchBar(props) {
   return (
     <form onSubmit={e=>props.handler(e)} class="form">
     {/* 1995 is the first day of the APOD api */}
-      <input class="date" type='date' min='1995-06-16' max={today} placeholder="mm-dd-yyyy" required pattern="\d{4}-\d{2}-\d{2}"/>
+      <input class="date" type='date' min='1995-06-16' max={today} placeholder="yyyy-mm-dd" required pattern="\d{4}-\d{2}-\d{2}"/>
       <input class="submit" type='submit' value='Submit' />
     </form>
   )
