@@ -6,27 +6,23 @@ class Modal extends Component {
     super(props)
 
     this.state = {
-      display: props.modalDisplay,
+      hidden: props.hidden,
       src: props.modalProps.hdurl,
       title: props.modalProps.title,
       explan: props.modalProps.explanation,
     }
   }
-
+  
   render() {
-    if (this.state.display === true) {
-      return (
-        <div className="modalRoot" style={this.style}>
-          <div className="modal">
-            <h3>{this.state.title}</h3>
-            <img src={this.state.src} alt="Retrieved from NASA Api"/>
-            <p>{this.state.explan}</p>
-          </div>
+    return (
+      <div id={this.hidden} className="modalRoot" style={this.style}>
+        <div className="modal">
+          <h3>{this.state.title}</h3>
+          <img src={this.state.src} alt="Retrieved from NASA Api"/>
+          <p>{this.state.explan}</p>
         </div>
-      )
-    } else {
-      return null
-    }
+      </div>
+    )
   }
 }
 

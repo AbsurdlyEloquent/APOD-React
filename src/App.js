@@ -39,7 +39,6 @@ class App extends Component {
         <main className="main">
         {/* js */}
           {this.state.data.map((item,i)=>{
-            console.log(i)
             return <Item className="box" key={i} src={item.url} index={i} />
           })}
         {/* js */}
