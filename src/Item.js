@@ -6,12 +6,24 @@ class Item extends Component {
     super(props)
 
     this.state ={
-      src: props.src
+      src: props.src,
+      index: props.index,
+      hidden: "hidden"
     }
   }
+  componentWillMount() {
+    let that = this
+    setTimeout(()=>{
+      that.show()
+    }, 250*that.state.index)
+  }
+  show() {
+    this.setState({hidden: ""})
+  }
   render = () => {
+    console.log(this.state.index)
     return (
-      <div style={{background: `url('${this.state.src}')`}} className="box"></div>
+      <div id={this.state.hidden} style={{background: `url('${this.state.src}')`}} className='box'></div>
     )
   }
 }
