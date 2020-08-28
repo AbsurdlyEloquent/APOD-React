@@ -55,7 +55,7 @@ class App extends Component {
       });
   }
   setModal(e) {
-    let i = e.target.index
+    let i = e.target.getAttribute("index")
     console.log(i)
   }
   hideModal = () => {

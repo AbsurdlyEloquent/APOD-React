@@ -11,6 +11,9 @@ class Item extends Component {
       hidden: "hidden"
     }
   }
+  handler = (e) => {
+    this.props.handler(e)
+  }
   componentDidMount() {
     let that = this
     setTimeout(()=>{
@@ -22,7 +25,7 @@ class Item extends Component {
   }
   render = () => {
     return (
-      <div id={this.state.hidden} style={{background: `url('${this.state.src}')`}} className='box'></div>
+      <div onClick={e=>this.handler(e)} id={this.state.hidden} style={{background: `url('${this.state.src}')`}} className='box' index={this.state.index}></div>
     )
   }
 }
