@@ -12,23 +12,21 @@ class Modal extends Component {
       explan: props.modalProps.explanation,
     }
   }
-  componentDidMount() {
-    if (this.state.display = false) {
-      this.style = {opacity: 0}
-    } else {
-      this.style = {opacity: 1}
-    }
-  }
+
   render() {
-    return (
-      <div className="modalRoot" style={this.style}>
-        <div className="modal">
-          <h3>{this.state.title}</h3>
-          <img src={this.state.src} alt="image"/>
-          <p>{this.state.explan}</p>
+    if (this.state.display === true) {
+      return (
+        <div className="modalRoot" style={this.style}>
+          <div className="modal">
+            <h3>{this.state.title}</h3>
+            <img src={this.state.src} alt="Retrieved from NASA Api"/>
+            <p>{this.state.explan}</p>
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return null
+    }
   }
 }
 

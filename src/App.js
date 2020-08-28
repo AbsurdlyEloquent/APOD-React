@@ -17,15 +17,14 @@ class App extends Component {
     }
   }
 
-  //vari's to pass from child to child
-
   componentDidMount() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&count=20`)
       .then(returned => returned.json())
       .then(returned => {this.setState({data: returned})});
   }
 
-  render() {
+  render = () => {
+
     return (
       <div className="body">
       <Modal display={this.state.modalDisplay} modalProps={this.state.modalProps}/>
@@ -38,13 +37,19 @@ class App extends Component {
             <SearchBar />
         </header>
         <main>
-
+        {/* js */}
+          {this.state.data.map(item=>{
+            return (
+              <Item className="box" key={item.date} src={item.url} />
+            )
+          })}
+        {/* js */}
         </main>
       </div>
     )
   }
   today = () => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=2020-08-27`)
       .then(res=>res.json())
       .then(res=>{
         this.setState({modalProps: res, modalDisplay: true})
