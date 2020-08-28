@@ -3,7 +3,6 @@ import './App.css';
 import Nav from './Nav.js'
 import SearchBar from './SearchBar.js'
 import Item from './Item.js'
-import LoadMore from './LoadMore.js'
 import Modal from './Modal.js'
 
 class App extends Component {
