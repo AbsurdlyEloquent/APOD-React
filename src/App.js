@@ -34,7 +34,7 @@ class App extends Component {
             <h1>Amazing Spectacular Astronomy Photos</h1>
             <h4>Now in React</h4>
           </section>
-          <SearchBar />
+          <SearchBar handler={this.setModal}/>
         </header>
         <main className="main">
         {/* js */}
@@ -47,7 +47,7 @@ class App extends Component {
     )
   }
   today = () => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=2020-08-27`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`)
       .then(res=>res.json())
       .then(res=>{
         this.setState({modalProps: res, modalHidden: ""})
@@ -55,12 +55,24 @@ class App extends Component {
       });
   }
   setModal = (e) => {
-    let i = e.target.getAttribute("index")
-    console.log(i)
-    this.setState({
-      modalProps: this.state.data[i],
-      modalHidden: ""
-    })
+    console.log(e.target.tagName)
+    e.preventDefault()
+    if(e.target.tagName === 'DIV') {
+      let i = e.target.getAttribute("index")
+      console.log(i)
+      this.setState({
+        modalProps: this.state.data[i],
+        modalHidden: ""
+      })
+    } else if (e.target.tagName === 'FORM') {
+      console.log(e.target.children[0].value)
+      fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=${e.target.children[0].value}`)
+        .then(res=>res.json())
+        .then(res=>{
+          this.setState({modalProps: res, modalHidden:""})
+          console.log(this.state.modalProps);
+        });
+    }
   }
   hideModal = () => {
     this.setState({

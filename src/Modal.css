@@ -1,4 +1,7 @@
 .modalRoot {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -31,6 +34,9 @@
 }
 .x {
   position: absolute;
+  right: 0;
+  font-size: 50px;
+  margin: 20px;
 }
 @keyframes slideDown {
   from {top: -100px;}
