@@ -25,7 +25,7 @@ class App extends Component {
   render = () => {
     return (
       <div className="body">
-      // pass data about the image and hiding prop to the Modal
+      {/* pass data about the image and hiding prop to the Modal */}
       <Modal id={this.state.modalHidden} modalProps={this.state.modalProps} hide={this.hideModal}/>
         <header className="header">
         {/*pass two methods to the Nav*/}
