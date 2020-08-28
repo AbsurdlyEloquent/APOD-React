@@ -31,4 +31,4 @@ When the setModal handler is called, either by a form or a grid item, it is pass
 
 ---------------------------------------------------------------------------
 
-This is my first experience with react, I think it went fairly well, thanks for visiting!
+This is my first experience with React, I think it went fairly well, thanks for visiting!
