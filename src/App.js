@@ -11,8 +11,9 @@ class App extends Component {
 
     this.state = {
       data: [],
+      modalKey: null,
       modalProps: {},
-      modalDisplay: "hidden"
+      modalHidden: "hidden"
     }
   }
 
@@ -26,7 +27,7 @@ class App extends Component {
 
     return (
       <div className="body">
-      <Modal hidden={this.state.modalDisplay} modalProps={this.state.modalProps}/>
+      <Modal key={this.state.modalKey} hidden={this.state.modalHidden} modalProps={this.state.modalProps}/>
         <header className="header">
           <Nav today={this.today} scrollTop={this.scrollTop}/>
             <section className="section">
@@ -49,7 +50,7 @@ class App extends Component {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=2020-08-27`)
       .then(res=>res.json())
       .then(res=>{
-        this.setState({modalProps: res, modalDisplay: ""})
+        this.setState({modalProps: res, hidden: ""})
         console.log(this.state.modalProps)
       });
   }
