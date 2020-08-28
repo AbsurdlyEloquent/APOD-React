@@ -24,22 +24,22 @@ class App extends Component {
   }
 
   render = () => {
-
+    console.log(this.state.modalHidden)
     return (
       <div className="body">
-      <Modal key={this.state.modalKey} hidden={this.state.modalHidden} modalProps={this.state.modalProps}/>
+      <Modal key={this.state.modalKey} id={this.state.modalHidden} modalProps={this.state.modalProps} hide={this.hideModal}/>
         <header className="header">
           <Nav today={this.today} scrollTop={this.scrollTop}/>
-            <section className="section">
-              <h1>Amazing Spectacular Astronomy Photos</h1>
-              <h4>Now in React</h4>
-            </section>
-            <SearchBar />
+          <section className="section">
+            <h1>Amazing Spectacular Astronomy Photos</h1>
+            <h4>Now in React</h4>
+          </section>
+          <SearchBar />
         </header>
         <main className="main">
         {/* js */}
           {this.state.data.map((item,i)=>{
-            return <Item onClick={(e)=>{this.setModal(this, e)}} className="box" key={i} src={item.url} index={i} />
+            return <Item handler={this.setModal} className="box" key={i} src={item.url} index={i} />
           })}
         {/* js */}
         </main>
@@ -54,12 +54,20 @@ class App extends Component {
         console.log(this.state.modalProps)
       });
   }
-  scrollTop() {
-    console.log('clicked2!')
-  }
   setModal(e) {
-    let key = e.index
-    console.log(key)
+    let i = e.target.index
+    console.log(i)
+  }
+  hideModal = () => {
+    this.setState({
+      modalKey: null,
+      modalProps: {},
+      modalHidden: "hidden"
+    })
+  }
+  scrollTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 }
 

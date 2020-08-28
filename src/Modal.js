@@ -6,16 +6,17 @@ class Modal extends Component {
     super(props)
 
     this.props = props
+    console.log(props.id)
   }
 
   render() {
     return (
-      <div id={this.props.hidden} className="modalRoot" style={this.style}>
+      <div id={this.props.id} className="modalRoot">
         <div className="modal">
           <h3>{this.props.modalProps.title}</h3>
           <img src={this.props.modalProps.hdurl} alt="Retrieved from NASA Api"/>
           <p>{this.props.modalProps.explanation}</p>
-          <p onClick={()=>this.props.hidden = "hidden"}>&times;</p>
+          <p onClick={this.props.hide}>&times;</p>
         </div>
       </div>
     )

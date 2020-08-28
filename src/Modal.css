@@ -29,9 +29,6 @@
   height: auto;
   border-radius: 5%;
 }
-#hidden {
-  display: none;
-}
 @keyframes slideDown {
   from {top: -100px;}
   to {}

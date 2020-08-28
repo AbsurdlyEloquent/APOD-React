@@ -23,6 +23,3 @@ class Nav extends Component {
 }
 
 export default Nav
-function scrollTop() {
-  console.log("clicked!")
-}
