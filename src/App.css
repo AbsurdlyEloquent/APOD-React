@@ -1,16 +1,17 @@
 .header {
-  display: flex;
   position: fixed;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  border-bottom: 1px solid white;
+  z-index: 2;
   text-align: center;
-  background: rgba(0,0,0,.5);
   color: white;
 }
-.header ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  width: 100%;
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 7% 5% 2% 5%;
 }

@@ -36,7 +36,7 @@ class App extends Component {
             </section>
             <SearchBar />
         </header>
-        <main>
+        <main className="main">
         {/* js */}
           {this.state.data.map(item=>{
             return (

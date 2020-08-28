@@ -1,3 +1,11 @@
+* {
+  box-sizing:border-box;
+  font-family: sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
 body {
   background-image: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   background-repeat: no-repeat;

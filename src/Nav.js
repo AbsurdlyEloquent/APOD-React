@@ -11,7 +11,7 @@ class Nav extends Component {
   render() {
     return (
       <nav>
-        <ul>
+        <ul className="list">
           <li onClick={this.today}>Today</li>
           <a href="https://apod.nasa.gov/apod/">APOD</a>
           <a href="https://github.com/AbsurdlyEloquent/apod-react">Source</a>
