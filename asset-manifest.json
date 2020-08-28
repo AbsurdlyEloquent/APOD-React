@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/apod-react/static/css/main.b2f4c9d4.chunk.css",
-    "main.js": "/apod-react/static/js/main.623ddb2b.chunk.js",
-    "main.js.map": "/apod-react/static/js/main.623ddb2b.chunk.js.map",
+    "main.css": "/apod-react/static/css/main.0b265c71.chunk.css",
+    "main.js": "/apod-react/static/js/main.ed21c44a.chunk.js",
+    "main.js.map": "/apod-react/static/js/main.ed21c44a.chunk.js.map",
     "runtime-main.js": "/apod-react/static/js/runtime-main.e5da454a.js",
     "runtime-main.js.map": "/apod-react/static/js/runtime-main.e5da454a.js.map",
     "static/js/2.ef523aa6.chunk.js": "/apod-react/static/js/2.ef523aa6.chunk.js",
     "static/js/2.ef523aa6.chunk.js.map": "/apod-react/static/js/2.ef523aa6.chunk.js.map",
     "index.html": "/apod-react/index.html",
-    "precache-manifest.66379e25bd287e30811d1f8eea4e34ed.js": "/apod-react/precache-manifest.66379e25bd287e30811d1f8eea4e34ed.js",
+    "precache-manifest.0889d4fae76ebff2f6d4611fb65b29b9.js": "/apod-react/precache-manifest.0889d4fae76ebff2f6d4611fb65b29b9.js",
     "service-worker.js": "/apod-react/service-worker.js",
-    "static/css/main.b2f4c9d4.chunk.css.map": "/apod-react/static/css/main.b2f4c9d4.chunk.css.map",
+    "static/css/main.0b265c71.chunk.css.map": "/apod-react/static/css/main.0b265c71.chunk.css.map",
     "static/js/2.ef523aa6.chunk.js.LICENSE.txt": "/apod-react/static/js/2.ef523aa6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e5da454a.js",
     "static/js/2.ef523aa6.chunk.js",
-    "static/css/main.b2f4c9d4.chunk.css",
-    "static/js/main.623ddb2b.chunk.js"
+    "static/css/main.0b265c71.chunk.css",
+    "static/js/main.ed21c44a.chunk.js"
   ]
 }
