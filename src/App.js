@@ -72,12 +72,14 @@ class App extends Component {
         });
     }
   }
-  hideModal = () => {
-    this.setState({
-      modalKey: null,
-      modalProps: {},
-      modalHidden: "hidden"
-    })
+  hideModal = (e) => {
+    if (e.target.className === "modalRoot") {
+      this.setState({
+        modalKey: null,
+        modalProps: {},
+        modalHidden: "hidden"
+      })
+    }
   }
   scrollTop() {
     document.body.scrollTop = 0;
